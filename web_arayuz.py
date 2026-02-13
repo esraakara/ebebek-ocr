@@ -12,7 +12,7 @@ st.title("🛡️ Etiket Mevzuat Uygunluk Denetim Sistemi")
 st.sidebar.info("ebebek Kalite ve Sertifikasyon Departmanı İçin Geliştirilmiştir")
 
 # 4. Yollar ve Model Tanımlamaları
-poppler_yolu = r"C:\Users\esra.kara\OneDrive - EBEBEK MAGAZACILIK A.S\Masaüstü\Library\bin"
+
 yasakli_kelimeler = ["MUCİZE", "HASTALIĞI ÖNLER", "KESİN ÇÖZÜM", "TEDAVİ EDER", "ZAYIFLATIR"]
 
 @st.cache_resource
@@ -41,7 +41,7 @@ if spec_file and label_file:
         with open("temp_label.pdf", "wb") as f:
             f.write(label_file.getbuffer())
         
-        pages = convert_from_path("temp_label.pdf", 300, poppler_path=poppler_yolu)
+        pages = convert_from_path("temp_label.pdf", 300, poppler_path="")
         img = np.array(pages[0])
         
         results = reader.readtext(img, detail=0)
@@ -121,4 +121,5 @@ if spec_file and label_file:
 st.divider()
 st.caption("ebebek Kalite ve Sertifikasyon Staj Projesi - 2026")          
            
+
         
