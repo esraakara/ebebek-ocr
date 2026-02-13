@@ -1,0 +1,6 @@
+streamlit
+easyocr
+numpy
+pdf2image
+pdfplumber
+opencv-python-headless
