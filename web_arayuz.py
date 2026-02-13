@@ -41,7 +41,7 @@ if spec_file and label_file:
         with open("temp_label.pdf", "wb") as f:
             f.write(label_file.getbuffer())
         
-        pages = convert_from_path("temp_label.pdf", 300, poppler_path="")
+        pages = convert_from_path("temp_label.pdf", 600)
         img = np.array(pages[0])
         
         results = reader.readtext(img, detail=0)
@@ -123,3 +123,4 @@ st.caption("ebebek Kalite ve Sertifikasyon Staj Projesi - 2026")
            
 
         
+
